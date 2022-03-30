@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <title>HELIX</title>
+    <link rel="icon" href="./img/favicon.ico">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="description" content="Сеть лабораторий 'Хеликс' в Тюмени">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=32934b60-7668-4b0e-b423-d1d9d7bd789d&lang=ru_RU"
+        type="text/javascript"></script>
+</head>
+
+<body>
+    <!-- Главная -->
+    <div class="page">
+        <!-- Шапка -->
+        <header class="header">
+    <div class="page__container">
+        <div class="header__container">
+
+            <!-- Логотип -->
+            <a href="/" class="logo">
+                <img src="./img/logo.png" alt="Logo">
+                <p>Сеть лабораторий «Хеликс» В ТЮМЕНИ</p>
+            </a>
+
+            <!-- Верхнее подменю -->
+            <nav class="header__submenu">
+                <ul class="header__submenu-list">
+                    <li class="header__submenu-item"><a href="#" class="header__submenu-link">О клинике</a>
+                    </li>
+                    <li class="header__submenu-item"><a href="#" class="header__submenu-link">Лицензии</a>
+                    </li>
+                    <li class="header__submenu-item"><a href="#" class="header__submenu-link">ОМС</a></li>
+                    <li class="header__submenu-item"><a href="#" class="header__submenu-link">Наши врачи</a>
+                    </li>
+                    <li class="header__submenu-item"><a href="#" class="header__submenu-link">Отзывы</a>
+                    </li>
+                    <li class="header__submenu-item"><a href="#" class="header__submenu-link">Выезд на
+                            дом</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Слабовидящим -->
+            <a class="header__eye">
+
+                <svg class="header__eye-icon">
+                    <use href="./img/icons/icons.svg#eye"></use>
+                </svg>
+                <p>Слабовидящим</p>
+            </a>
+
+            <!-- Поиск -->
+            <form class="header__search">
+                <div class="header__search-close">
+                    <span></span><span></span>
+                </div>
+                <div class="header__search-row">
+                    <button class="header__search-submit-mobile">
+                        <svg>
+                            <use href="./img/icons/icons.svg#search"></use>
+                        </svg>
+                    </button>
+                    <svg class="header__search-only-icon">
+                        <use href="./img/icons/icons.svg#search"></use>
+                    </svg>
+                    <input type="text" class="header__search-input" placeholder="Поиск нужного исследования, врача"
+                        minlength="1" name="search" autocomplete="off" />
+                </div>
+                <button class="header__search-btn">Найти</button>
+            </form>
+
+            <!-- Контакты в шапке -->
+            <div class="header__contacts">
+                <a href="tel:+73452355560" class="phone">
+                    <svg>
+                        <use href="./img/icons/icons.svg#phone"></use>
+                    </svg>
+                    <p>8 (3452) <span>35-55-60</span></p>
+                </a>
+                <a href="#map" class="header__contacts-map">8 центров в Тюмени</a>
+            </div>
+
+            <!-- Кнопка -->
+            <button data-pointer="signup" class="btn btn_main">Запись на прием</button>
+
+            <!-- Верхнее меню -->
+            <nav class="menu">
+                <div class="header__burger">
+                    <span></span><span></span><span></span>
+                </div>
+                <ul class="menu__list">
+                    <li class="menu__item menu__item-dropdown">
+                        <a href="./choose-doctors.html" class="menu__link">Выбрать врача</a>
+                        <div class="menu__expand">
+                            <div class="menu__expand-layout">
+                                <ul class="menu__dropdown">
+                                    <li class="menu__dropdown-item"><span
+                                            class="menu__dropdown-link menu__dropdown-link_none">Взрослые врачи</span>
+                                    </li>
+                                    <li class="menu__dropdown-item"><a href="./doctor.html"
+                                            class="menu__dropdown-link">Отоларинголог (ЛОР)</a></li>
+                                    <li class="menu__dropdown-item"><a href="#"
+                                            class="menu__dropdown-link">Дерматовенеролог</a></li>
+                                    <li class="menu__dropdown-item"><a href="#" class="menu__dropdown-link">Невролог</a>
+                                    </li>
+                                    <li class="menu__dropdown-item"><a href="#"
+                                            class="menu__dropdown-link">Косметолог</a></li>
+                                    <li class="menu__dropdown-item"><a href="#"
+                                            class="menu__dropdown-link">Аллерголог-иммунологог</a></li>
+                                    <li class="menu__dropdown-item"><a href="#"
+                                            class="menu__dropdown-link">Эндокринолог</a></li>
+                                    <li class="menu__dropdown-item"><a href="#"
+                                            class="menu__dropdown-link">Нутрициолог</a></li>
+                                </ul>
+                                <ul class="menu__dropdown">
+                                    <li class="menu__dropdown-item"><span
+                                            class="menu__dropdown-link menu__dropdown-link_none">Детские врачи</span>
+                                    </li>
+                                    <li class="menu__dropdown-item"><a href="#" class="menu__dropdown-link">Педиатр</a>
+                                    </li>
+                                    <li class="menu__dropdown-item"><a href="#"
+                                            class="menu__dropdown-link">Эндокринолог</a></li>
+                                    <li class="menu__dropdown-item"><a href="#" class="menu__dropdown-link">Невролог</a>
+                                    </li>
+                                    <li class="menu__dropdown-item"><a href="#" class="menu__dropdown-link">Нефролог</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="menu__item"><a href="./uslugi.html" class="menu__link">УЗИ</a></li>
+                    <li class="menu__item"><a href="#" class="menu__link">ЭКГ</a></li>
+                    <li class="menu__item"><a href="#" class="menu__link">Процедурный кабинет</a></li>
+                    <li class="menu__item menu__item-dropdown">
+                        <a href="#" class="menu__link">Диагностика</a>
+                        <div class="menu__expand">
+                            <div class="menu__expand-layout">
+                                <ul class="menu__dropdown">
+                                    <li class="menu__dropdown-item"><a href="#" class="menu__dropdown-link">Какой-то
+                                            пункт</a></li>
+                                    <li class="menu__dropdown-item"><a href="#" class="menu__dropdown-link">Какой-то
+                                            пункт</a></li>
+                                    <li class="menu__dropdown-item"><a href="#" class="menu__dropdown-link">Какой-то
+                                            пункт</a></li>
+                                    <li class="menu__dropdown-item"><a href="#" class="menu__dropdown-link">Какой-то
+                                            пункт</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="menu__item"><a href="#" class="menu__link">Анализы</a></li>
+                    <li class="menu__item"><a href="#" class="menu__link">Акции</a></li>
+                    <li class="menu__item menu__item-dropdown">
+                        <a href="#" class="menu__link">Пациентам</a>
+                        <div class="menu__expand">
+                            <div class="menu__expand-layout">
+                                <ul class="menu__dropdown">
+                                    <li class="menu__dropdown-item"><a href="#" class="menu__dropdown-link">Какой-то
+                                            пункт</a></li>
+                                    <li class="menu__dropdown-item"><a href="#" class="menu__dropdown-link">Какой-то
+                                            пункт</a></li>
+                                    <li class="menu__dropdown-item"><a href="#" class="menu__dropdown-link">Какой-то
+                                            пункт</a></li>
+                                    <li class="menu__dropdown-item"><a href="#" class="menu__dropdown-link">Какой-то
+                                            пункт</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="menu__item"><a href="#" class="menu__link">Контакты</a></li>
+                    <li class="menu__item">
+                        <a href="#" class="menu__link menu__link_covid">
+                            <svg>
+                                <use href="./img/icons/icons.svg#virus"></use>
+                            </svg>
+                            <span>Covid-19</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+</header>
+        <!-- Хлебные крошки -->
+        <div class="breadcrumbs">
+    <div class="page__container">
+        <ul class="breadcrumbs__list">
+            <li class="breadcrumbs__item">
+                <a href="./index.html" class="breadcrumbs__link">Главная</a>
+            </li>
+            <li class="breadcrumbs__item">
+                <span class="breadcrumbs__current">Выбрать врача</span>
+            </li>
+        </ul>
+    </div>
+</div>
+
+        <main class="main">
+            <div class="page__container">
+                <h1 class="page__title">Выберите врача</h1>
+            </div>
+            <!-- WORKAREA -->
+            <!-- Специальности -->
+            <section class="specialties">
+    <div class="page__container">
+        <div class="tabs">
+            <div class="tabs__controls">
+                <label for="tab1">Все врачи
+                    <input id="tab1" class="visually-hidden" type="radio" value="tab1" name="tabs" checked>
+                </label>
+
+                <label for="tab2">Взрослые врачи
+                    <input id="tab2" class="visually-hidden" type="radio" value="tab2" name="tabs">
+                </label>
+
+                <label for="tab3">Детские врачи
+                    <input id="tab3" class="visually-hidden" type="radio" value="tab3" name="tabs">
+                </label>
+            </div>
+            <div class="tabs__content">
+                <div class="tabs__tab" data-pointer="tab1">
+                    <div class="specialties__block">
+                        <h3 class="specialties__title">Взрослые врачи</h3>
+                        <ul class="specialties__list">
+                            <li class="specialties__item">
+                                <a href="#" class="specialties__item-link">
+                                    <svg>
+                                        <use href="./img/icons/icons.svg#specialization_otolaringolog"></use>
+                                    </svg>
+                                    <span>Отоларинголог</span>
+                                </a>
+                            </li>
+                            <li class="specialties__item">
+                                <a href="#" class="specialties__item-link">
+                                    <svg>
+                                        <use href="./img/icons/icons.svg#specialization_kosmetolog"></use>
+                                    </svg>
+                                    <span>Косметолог</span>
+                                </a>
+                            </li>
+                            <li class="specialties__item">
+                                <a href="#" class="specialties__item-link">
+                                    <svg>
+                                        <use href="./img/icons/icons.svg#specialization_allergolog-immunolog"></use>
+                                    </svg>
+                                    <span>Аллерголог-иммунолог</span>
+                                </a>
+                            </li>
+                            <li class="specialties__item">
+                                <a href="#" class="specialties__item-link">
+                                    <svg>
+                                        <use href="./img/icons/icons.svg#specialization_endokrinolog"></use>
+                                    </svg>
+                                    <span>Эндокринолог</span>
+                                </a>
+                            </li>
+                            <li class="specialties__item">
+                                <a href="#" class="specialties__item-link">
+                                    <svg>
+                                        <use href="./img/icons/icons.svg#specialization_akusher-ginekolog"></use>
+                                    </svg>
+                                    <span>Акушер-гинеколог</span>
+                                </a>
+                            </li>
+                            <li class="specialties__item">
+                                <a href="#" class="specialties__item-link">
+                                    <svg>
+                                        <use href="./img/icons/icons.svg#specialization_dermatovenerolog"></use>
+                                    </svg>
+                                    <span>Дерматовенеролог</span>
+                                </a>
+                            </li>
+                            <li class="specialties__item">
+                                <a href="#" class="specialties__item-link">
+                                    <svg>
+                                        <use href="./img/icons/icons.svg#specialization_nevrolog"></use>
+                                    </svg>
+                                    <span>Невролог</span>
+                                </a>
+                            </li>
+                            <li class="specialties__item">
+                                <a href="#" class="specialties__item-link">
+                                    <svg>
+                                        <use href="./img/icons/icons.svg#specialization_nutriciolog"></use>
+                                    </svg>
+                                    <span>Нутрициолог</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="specialties__block">
+                        <h3 class="specialties__title">Детские врачи</h3>
+                        <ul class="specialties__list">
+                            <li class="specialties__item">
+                                <a href="#" class="specialties__item-link">
+                                    <svg>
+                                        <use href="./img/icons/icons.svg#specialization_pediatr"></use>
+                                    </svg>
+                                    <span>Педиатр</span>
+                                </a>
+                            </li>
+                            <li class="specialties__item">
+                                <a href="#" class="specialties__item-link">
+                                    <svg>
+                                        <use href="./img/icons/icons.svg#specialization_detskiy-endokrinolog"></use>
+                                    </svg>
+                                    <span>Детский эндокринолог</span>
+                                </a>
+                            </li>
+                            <li class="specialties__item">
+                                <a href="#" class="specialties__item-link">
+                                    <svg>
+                                        <use href="./img/icons/icons.svg#specialization_detskiy-nevrolog"></use>
+                                    </svg>
+                                    <span>Детский невролог</span>
+                                </a>
+                            </li>
+                            <li class="specialties__item">
+                                <a href="#" class="specialties__item-link">
+                                    <svg>
+                                        <use href="./img/icons/icons.svg#specialization_detskiy-nefrolog"></use>
+                                    </svg>
+                                    <span>Детский нефролог</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="tabs__tab" data-pointer="tab2">
+                    <div class="specialties__block">
+                        <h3 class="specialties__title">Взрослые врачи</h3>
+                        <ul class="specialties__list">
+                            <li class="specialties__item">
+                                <a href="#" class="specialties__item-link">
+                                    <svg>
+                                        <use href="./img/icons/icons.svg#specialization_otolaringolog"></use>
+                                    </svg>
+                                    <span>Отоларинголог</span>
+                                </a>
+                            </li>
+                            <li class="specialties__item">
+                                <a href="#" class="specialties__item-link">
+                                    <svg>
+                                        <use href="./img/icons/icons.svg#specialization_kosmetolog"></use>
+                                    </svg>
+                                    <span>Косметолог</span>
+                                </a>
+                            </li>
+                            <li class="specialties__item">
+                                <a href="#" class="specialties__item-link">
+                                    <svg>
+                                        <use href="./img/icons/icons.svg#specialization_allergolog-immunolog"></use>
+                                    </svg>
+                                    <span>Аллерголог-иммунолог</span>
+                                </a>
+                            </li>
+                            <li class="specialties__item">
+                                <a href="#" class="specialties__item-link">
+                                    <svg>
+                                        <use href="./img/icons/icons.svg#specialization_endokrinolog"></use>
+                                    </svg>
+                                    <span>Эндокринолог</span>
+                                </a>
+                            </li>
+                            <li class="specialties__item">
+                                <a href="#" class="specialties__item-link">
+                                    <svg>
+                                        <use href="./img/icons/icons.svg#specialization_akusher-ginekolog"></use>
+                                    </svg>
+                                    <span>Акушер-гинеколог</span>
+                                </a>
+                            </li>
+                            <li class="specialties__item">
+                                <a href="#" class="specialties__item-link">
+                                    <svg>
+                                        <use href="./img/icons/icons.svg#specialization_dermatovenerolog"></use>
+                                    </svg>
+                                    <span>Дерматовенеролог</span>
+                                </a>
+                            </li>
+                            <li class="specialties__item">
+                                <a href="#" class="specialties__item-link">
+                                    <svg>
+                                        <use href="./img/icons/icons.svg#specialization_nevrolog"></use>
+                                    </svg>
+                                    <span>Невролог</span>
+                                </a>
+                            </li>
+                            <li class="specialties__item">
+                                <a href="#" class="specialties__item-link">
+                                    <svg>
+                                        <use href="./img/icons/icons.svg#specialization_nutriciolog"></use>
+                                    </svg>
+                                    <span>Нутрициолог</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="tabs__tab" data-pointer="tab3">
+                    <div class="specialties__block">
+                        <h3 class="specialties__title">Детские врачи</h3>
+                        <ul class="specialties__list">
+                            <li class="specialties__item">
+                                <a href="#" class="specialties__item-link">
+                                    <svg>
+                                        <use href="./img/icons/icons.svg#specialization_pediatr"></use>
+                                    </svg>
+                                    <span>Педиатр</span>
+                                </a>
+                            </li>
+                            <li class="specialties__item">
+                                <a href="#" class="specialties__item-link">
+                                    <svg>
+                                        <use href="./img/icons/icons.svg#specialization_detskiy-endokrinolog"></use>
+                                    </svg>
+                                    <span>Детский эндокринолог</span>
+                                </a>
+                            </li>
+                            <li class="specialties__item">
+                                <a href="#" class="specialties__item-link">
+                                    <svg>
+                                        <use href="./img/icons/icons.svg#specialization_detskiy-nevrolog"></use>
+                                    </svg>
+                                    <span>Детский невролог</span>
+                                </a>
+                            </li>
+                            <li class="specialties__item">
+                                <a href="#" class="specialties__item-link">
+                                    <svg>
+                                        <use href="./img/icons/icons.svg#specialization_detskiy-nefrolog"></use>
+                                    </svg>
+                                    <span>Детский нефролог</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+            <!-- Наши врачи -->
+            <section class="doctors">
+    <div class="page__container">
+
+        <div class="section__top">
+            <h2 class="section__title">Наши врачи</h2>
+            <a href="#" class="all-link section__all">Все врачи
+                <svg>
+                    <use href="./img/icons/icons.svg#arrow-link"></use>
+                </svg>
+            </a>
+        </div>
+
+        <!-- Фильтр (жду UI) -->
+        <form class="filter doctors__filter">
+            <div class="select filter__select">
+                <a class="select__btn">Специальность</a>
+                <div class="select__expand">
+                    <div class="select__expand-layout">
+                        <div class="select__option">
+                            <label for="11" class="select__label">Отоларинголог (ЛОР)</label>
+                            <input type="checkbox" name="specialization" value="Отоларинголог (ЛОР)" id="11">
+                        </div>
+                        <div class="select__option">
+                            <label for="12" class="select__label">Акушер-гинеколог</label>
+                            <input type="checkbox" name="specialization" value="Акушер-гинеколог" id="12">
+                        </div>
+                        <div class="select__option">
+                            <label for="13" class="select__label">Дерматовенеролог</label>
+                            <input type="checkbox" name="specialization" value="Дерматовенеролог" id="13">
+                        </div>
+                        <div class="select__option">
+                            <label for="14" class="select__label">Невролог</label>
+                            <input type="checkbox" name="specialization" value="Невролог" id="14">
+                        </div>
+                        <div class="select__option">
+                            <label for="15" class="select__label">Косметолог</label>
+                            <input type="checkbox" name="specialization" value="Косметолог" id="15">
+                        </div>
+                        <div class="select__option">
+                            <label for="16" class="select__label">Аллерголог-иммунологог</label>
+                            <input type="checkbox" name="specialization" value="Аллерголог-иммунологог" id="16">
+                        </div>
+                        <div class="select__option">
+                            <label for="17" class="select__label">Эндокринолог</label>
+                            <input type="checkbox" name="specialization" value="Эндокринолог" id="17">
+                        </div>
+                        <div class="select__option">
+                            <label for="18" class="select__label">Нутрициолог</label>
+                            <input type="checkbox" name="specialization" value="Нутрициолог" id="18">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="select filter__select">
+                <a class="select__btn">Филиал</a>
+                <div class="select__expand">
+                    <div class="select__expand-layout">
+                        <div class="select__option">
+                            <label for="21" class="select__label">ДЦ на Ямской</label>
+                            <input type="checkbox" name="branch" value="ДЦ на Ямской" id="21">
+                        </div>
+                        <div class="select__option">
+                            <label for="22" class="select__label">ДЦ на Ямской</label>
+                            <input type="checkbox" name="branch" value="ДЦ на Ямской" id="22">
+                        </div>
+                        <div class="select__option">
+                            <label for="23" class="select__label">ДЦ на Ямской</label>
+                            <input type="checkbox" name="branch" value="ДЦ на Ямской" id="23">
+                        </div>
+                        <div class="select__option">
+                            <label for="24" class="select__label">ДЦ на Ямской</label>
+                            <input type="checkbox" name="branch" value="ДЦ на Ямской" id="24">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <button class="btn">Показать</button>
+        </form>
+
+
+        <ul class="doctors__list">
+            <li class="doctors__item">
+                <a href="#"><img class="doctors__photo" src="./img/doctor.png" alt="#"></a>
+                <div class="doctors__description">
+                    <p class="doctors__post">Врач хирург</p>
+                    <a href="#">
+                        <h3 class="doctors__name">Петров Иван Иванович</h3>
+                    </a>
+                    <p class="doctors__experience">Стаж работы 10 лет</p>
+                    <ul class="list doctors__lists">
+                        <li class="list-item">
+                           
+                                <svg class="ellipse-icon">
+                                    <use href="./img/icons/icons.svg#ellipse-full"></use>
+                                </svg>
+                                <span class="list-text">ДЦ на Ямской</span>
+                           
+                        </li>
+                        <li class="list-item">
+                           
+                                <svg class="ellipse-icon">
+                                    <use href="./img/icons/icons.svg#ellipse-full"></use>
+                                </svg>
+                                <span class="list-text">ДЦ на Гольцова</span>
+                        
+                        </li>
+                    </ul>
+                    <button class="btn btn_white">Записаться</button>
+                </div>
+            </li>
+            <li class="doctors__item">
+                <a href="#"><img class="doctors__photo" src="./img/doctor.png" alt="#"></a>
+                <div class="doctors__description">
+                    <p class="doctors__post">Врач хирург</p>
+                    <a href="#">
+                        <h3 class="doctors__name">Петров Иван Иванович</h3>
+                    </a>
+                    <p class="doctors__experience">Стаж работы 10 лет</p>
+                    <ul class="list doctors__lists">
+                        <li class="list-item">
+                            
+                                <svg class="ellipse-icon">
+                                    <use href="./img/icons/icons.svg#ellipse-full"></use>
+                                </svg>
+                                <span class="list-text">ДЦ на Ямской</span>
+                        
+                        </li>
+                        <li class="list-item">
+                           
+                                <svg class="ellipse-icon">
+                                    <use href="./img/icons/icons.svg#ellipse-full"></use>
+                                </svg>
+                                <span class="list-text">ДЦ на Гольцова</span>
+                           
+                        </li>
+                    </ul>
+                    <button class="btn btn_white">Записаться</button>
+                </div>
+            </li>
+            <li class="doctors__item">
+                <a href="#"><img class="doctors__photo" src="./img/doctor.png" alt="#"></a>
+                <div class="doctors__description">
+                    <p class="doctors__post">Врач хирург</p>
+                    <a href="#">
+                        <h3 class="doctors__name">Петров Иван Иванович</h3>
+                    </a>
+                    <p class="doctors__experience">Стаж работы 10 лет</p>
+                    <ul class="list doctors__lists">
+                        <li class="list-item">
+                            
+                                <svg class="ellipse-icon">
+                                    <use href="./img/icons/icons.svg#ellipse-full"></use>
+                                </svg>
+                                <span class="list-text">ДЦ на Ямской</span>
+                           
+                        </li>
+                        <li class="list-item">
+                           
+                                <svg class="ellipse-icon">
+                                    <use href="./img/icons/icons.svg#ellipse-full"></use>
+                                </svg>
+                                <span class="list-text">ДЦ на Гольцова</span>
+                           
+                        </li>
+                    </ul>
+                    <button class="btn btn_white">Записаться</button>
+                </div>
+            </li>
+            <li class="doctors__item">
+                <a href="#"><img class="doctors__photo" src="./img/doctor.png" alt="#"></a>
+                <div class="doctors__description">
+                    <p class="doctors__post">Врач хирург</p>
+                    <a href="#">
+                        <h3 class="doctors__name">Петров Иван Иванович</h3>
+                    </a>
+                    <p class="doctors__experience">Стаж работы 10 лет</p>
+                    <ul class="list doctors__lists">
+                        <li class="list-item">
+                           
+                                <svg class="ellipse-icon">
+                                    <use href="./img/icons/icons.svg#ellipse-full"></use>
+                                </svg>
+                                <span class="list-text">ДЦ на Ямской</span>
+                           
+                        </li>
+                        <li class="list-item">
+                            
+                                <svg class="ellipse-icon">
+                                    <use href="./img/icons/icons.svg#ellipse-full"></use>
+                                </svg>
+                                <span class="list-text">ДЦ на Гольцова</span>
+                          
+                        </li>
+                    </ul>
+                    <button class="btn btn_white">Записаться</button>
+                </div>
+            </li>
+        </ul>
+        <div class="doctors__all">
+            <button class="btn btn_all">Показать еще</button>
+        </div>
+
+    </div>
+</section>
+
+            <!-- Лицензии -->
+            <section class="licenses licenses_main _anim-items _anim-no-hide">
+    <div class="page__container">
+        <h2 class="section__title">Лицензии</h2>
+        <div class="licenses__container-for-arrows">
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper swiper-licenses">
+
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="licenses__item">
+                            <img data-pointer="photo" class="licenses__img" src="./img/license.png" alt="license">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="licenses__item">
+                            <img data-pointer="photo" class="licenses__img" src="./img/license.png" alt="license">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="licenses__item">
+                            <img data-pointer="photo" class="licenses__img" src="./img/license.png" alt="license">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="licenses__item">
+                            <img data-pointer="photo" class="licenses__img" src="./img/license.png" alt="license">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="licenses__item">
+                            <img data-pointer="photo" class="licenses__img" src="./img/license.png" alt="license">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="licenses__item">
+                            <img data-pointer="photo" class="licenses__img" src="./img/license.png" alt="license">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="licenses__item">
+                            <img data-pointer="photo" class="licenses__img" src="./img/license.png" alt="license">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="licenses__item">
+                            <img data-pointer="photo" class="licenses__img" src="./img/license.png" alt="license">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="licenses__item">
+                            <img data-pointer="photo" class="licenses__img" src="./img/license.png" alt="license">
+                        </div>
+                    </div>
+
+                </div>
+                <div class="swiper-scrollbar"></div>
+            </div>
+        </div>
+
+
+    </div>
+
+</section>
+        </main>
+        <div id="map" class="maps">
+    <div class="page__container maps__container">
+        <div class="maps__absolute">
+            <h2 class="maps__absolute-title">Наши филиалы</h2>
+            <ul class="list">
+                <li class="list-item">
+                    <a data-map="1">
+                        <svg class="ellipse-icon">
+                            <use href="./img/icons/icons.svg#map-icon"></use>
+                        </svg>
+                        <span class="list-text">ДЦ на Свердлова</span>
+                    </a>
+                </li>
+                <li class="list-item">
+                    <a data-map="2">
+                        <svg class="ellipse-icon">
+                            <use href="./img/icons/icons.svg#map-icon"></use>
+                        </svg>
+                        <span class="list-text">ДЦ на Ямской</span>
+                    </a>
+                </li>
+                <li class="list-item">
+                    <a data-map="3">
+                        <svg class="ellipse-icon">
+                            <use href="./img/icons/icons.svg#map-icon"></use>
+                        </svg>
+                        <span class="list-text">ДЦ на Газовиков</span>
+                    </a>
+                </li>
+                <li class="list-item">
+                    <a data-map="4">
+                        <svg class="ellipse-icon">
+                            <use href="./img/icons/icons.svg#map-icon"></use>
+                        </svg>
+                        <span class="list-text">ДЦ на Республики</span>
+                    </a>
+                </li>
+                <li class="list-item">
+                    <a data-map="5">
+                        <svg class="ellipse-icon">
+                            <use href="./img/icons/icons.svg#map-icon"></use>
+                        </svg>
+                        <span class="list-text">ДЦ на Гольцова</span>
+                    </a>
+                </li>
+                <li class="list-item">
+                    <a data-map="6">
+                        <svg class="ellipse-icon">
+                            <use href="./img/icons/icons.svg#map-icon"></use>
+                        </svg>
+                        <span class="list-text">ДЦ на Монтажников</span>
+                    </a>
+                </li>
+                <li class="list-item">
+                    <a data-map="7">
+                        <svg class="ellipse-icon">
+                            <use href="./img/icons/icons.svg#map-icon"></use>
+                        </svg>
+                        <span class="list-text">ДЦ на Менделеева</span>
+                    </a>
+                </li>
+                <li class="list-item">
+                    <a data-map="8">
+                        <svg class="ellipse-icon">
+                            <use href="./img/icons/icons.svg#map-icon"></use>
+                        </svg>
+                        <!-- Университетская или Ленина? -->
+                        <span class="list-text">ДЦ на Ленина</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+        <footer class="footer">
+    <div class="footer__top">
+        <div class="page__container footer__grid">
+            <a href="/" class="logo">
+                <img src="./img/logo.png" alt="Logo">
+                <p>Сеть лабораторий «Хеликс» В ТЮМЕНИ</p>
+            </a>
+            <nav class="footer__menu">
+                <p class="footer__grid-title">Клиника</p>
+                <ul class="footer__menu-list">
+                    <li><a href="#">Врачи</a></li>
+                    <li><a href="#">Акции</a></li>
+                    <li><a href="#">Анализы</a></li>
+                    <li><a href="#">Отзывы</a></li>
+                    <li><a href="#">Диагностика</a></li>
+                    <li><a href="#">Информация</a></li>
+                    <li><a href="#">Выезд на дом</a></li>
+                    <li><a href="#">Контакты</a></li>
+                </ul>
+            </nav>
+            <nav class="footer__menu">
+                <p class="footer__grid-title">Пациентам</p>
+                <ul class="footer__menu-list">
+                    <li><a href="#">О клинике</a></li>
+                    <li><a href="#">ДМС</a></li>
+                    <li><a href="#">Лицензии</a></li>
+                    <li><a href="#">Наши врачи</a></li>
+                    <li><a href="#">ОМС</a></li>
+                    <li><a href="#">Новости</a></li>
+                </ul>
+            </nav>
+            <div class="footer__contacts">
+                <p class="footer__grid-title">Связь с нами</p>
+                <p class="footer__contacts-number">Многоканальный телефон в Тюмени </p>
+                <a href="tel:+73452355560" class="phone">
+                    <svg>
+                        <use href="./img/icons/icons.svg#phone"></use>
+                    </svg>
+                    <p>8 (3452) <span>35-55-60</span></p>
+                </a>
+                <a href="mailto:info@helix.ru" class="email">
+                    <svg>
+                        <use href="./img/icons/icons.svg#email"></use>
+                    </svg>
+                    <p>info@helix.ru</p>
+                </a>
+                <button data-pointer="signup" class="btn btn_main">Запись на прием</button>
+            </div>
+        </div>
+    </div>
+    <div class="footer__bottom">
+        <div class="page__container">
+            <div class="footer__additionally">
+                <p class="footer__copyright">2021 © Сеть лабораторий «Хеликс» В ТЮМЕНИ </p>
+                <div class="footer__info">
+                    <ul class="footer__info-list">
+                        <li><a href="#">Правовая информация</a></li>
+                        <li><a href="#">Обработка персональных данных</a></li>
+                    </ul>
+                    
+                </div>
+                <ul class="footer__social">
+                    <!-- Instagram -->
+                    <li>
+                        <a target="_blank" href="#">
+                            <svg>
+                                <use href="./img/icons/icons.svg#instagram"></use>
+                            </svg>
+                        </a>
+                    </li>
+                    <!-- Whatsapp -->
+                    <li>
+                        <a target="_blank" href="#">
+                            <svg>
+                                <use href="./img/icons/icons.svg#whatsapp"></use>
+                            </svg>
+                        </a>
+                    </li>
+                    <!-- ВК -->
+                    <li>
+                        <a target="_blank" href="#">
+                            <svg>
+                                <use href="./img/icons/icons.svg#vk"></use>
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <p class="contraindications footer__contraindications">ИМЕЮТСЯ ПРОТИВОПОКАЗАНИЯ. НЕОБХОДИМО ПОЛУЧЕНИЕ
+                КОНСУЛЬТАЦИИ СПЕЦИАЛИСТА
+            </p>
+        </div>
+    </div>
+</footer>
+    </div>
+
+    <div id="signup" class="popup">
+        <div class="popup__container">
+            <div class="popup__content">
+                <form class="form">
+                    <img src="./img/form-signup.png" alt="Записаться" class="form__img">
+                    <h3 class="form__title">Записаться на прием</h3>
+                    <ul class="form__rows">
+                        <li class="form__row">
+                            <input type="text" autocomplete="off" placeholder="Ваше имя" name="name" required
+                                minlength="3" maxlength="20" class="form__input">
+                        </li>
+                        <li class="form__row">
+                            <label for="phone" class="form__label">Телефон</label>
+                            <input type="tel" autocomplete="off" required name="phone" id="phone"
+                                placeholder="+7 900 550 50 50" class="form__input">
+                        </li>
+                    </ul>
+                    <button class="btn">Записаться</button>
+                    <p class="form__politics">Нажимая на кпопку «Записаться» вы соглашаетесь на <a href="#">политику
+                            обработки данных</a></p>
+                </form>
+            </div>
+            <button class="popup__close">&#10006;</button>
+        </div>
+    </div>
+
+    <div id="photo" class="popup">
+        <div class="popup__container">
+            <div class="popup__content">
+                <img src="./img/test1.png" alt="Image" class="popup__img">
+            </div>
+            <button class="popup__close">&#10006;</button>
+
+        </div>
+    </div>
+
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/jquery.maskedinput.min.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

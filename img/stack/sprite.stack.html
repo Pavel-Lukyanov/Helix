@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta charset="utf-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+		<title>SVG stack preview | svg-sprite</title>
+		<style>@charset "UTF-8";body{padding:0;margin:0;color:#666;background:#fafafa;font-family:Arial,Helvetica,sans-serif;font-size:1em;line-height:1.4}header{display:block;padding:3em 3em 2em 3em;background-color:#fff}header p{margin:2em 0 0 0}section{border-top:1px solid #eee;padding:2em 3em 0 3em}section ul{margin:0;padding:0}section li{display:inline;display:inline-block;background-color:#fff;position:relative;margin:0 2em 2em 0;vertical-align:top;border:1px solid #ccc;padding:1em 1em 3em 1em;cursor:default}.icon-box{margin:0;width:144px;height:144px;position:relative;background:#ccc url("data:image/gif;base64,R0lGODlhDAAMAIAAAMzMzP///yH/C1hNUCBEYXRhWE1QPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS4wLWMwNjEgNjQuMTQwOTQ5LCAyMDEwLzEyLzA3LTEwOjU3OjAxICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdFJlZj0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlUmVmIyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1LjEgV2luZG93cyIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozQjk4OTI0MUY5NTIxMUUyQkJDMEI5NEFEM0Y1QTYwQyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozQjk4OTI0MkY5NTIxMUUyQkJDMEI5NEFEM0Y1QTYwQyI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjNCOTg5MjNGRjk1MjExRTJCQkMwQjk0QUQzRjVBNjBDIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjNCOTg5MjQwRjk1MjExRTJCQkMwQjk0QUQzRjVBNjBDIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkEAAAAAAAsAAAAAAwADAAAAhaEH6mHmmzcgzJAUG/NVGrfOZ8YLlABADs=") top left repeat;border:1px solid #ccc;display:table-cell;vertical-align:middle;text-align:center}.icon{display:inline;display:inline-block}h1{margin-top:0}h2{margin:0;padding:0;font-size:1em;font-weight:normal;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;position:absolute;left:1em;right:1em;bottom:1em}footer{display:block;margin:0;padding:0 3em 3em 3em}footer p{margin:0;font-size:.7em}footer a{color:#0f7595;margin-left:0}</style>
+
+<!--
+
+Sprite shape dimensions
+====================================================================================================
+You will need to set the sprite shape dimensions via CSS when you use them as stack SVGs, otherwise
+they would become a huge 100% in size. You may use the following dimension classes for doing so.
+They might well be outsourced to an external stylesheet of course.
+
+-->
+
+<style type="text/css">
+	.svg-action-dims { width: 56px; height: 22px; }
+	.svg-arrow-link-dims { width: 24px; height: 12px; }
+	.svg-calendar-dims { width: 25px; height: 22px; }
+	.svg-ellipse-dims { width: 12px; height: 12px; }
+	.svg-ellipse-full-dims { width: 8px; height: 8px; }
+	.svg-email-dims { width: 16px; height: 12px; }
+	.svg-eye-dims { width: 19px; height: 12px; }
+	.svg-instagram-dims { width: 16px; height: 16px; }
+	.svg-map-icon-dims { width: 16px; height: 18px; }
+	.svg-map-location-dims { width: 8px; height: 10px; }
+	.svg-map-orange-dims { width: 16px; height: 16px; }
+	.svg-phone-dims { width: 18px; height: 18px; }
+	.svg-search-dims { width: 24px; height: 24px; }
+	.svg-specialization_akusher-ginekolog-dims { width: 32px; height: 32px; }
+	.svg-specialization_allergolog-immunolog-dims { width: 32px; height: 31px; }
+	.svg-specialization_dermatovenerolog-dims { width: 19px; height: 32px; }
+	.svg-specialization_detskiy-endokrinolog-dims { width: 30px; height: 32px; }
+	.svg-specialization_detskiy-nefrolog-dims { width: 32px; height: 25px; }
+	.svg-specialization_detskiy-nevrolog-dims { width: 24px; height: 32px; }
+	.svg-specialization_endokrinolog-dims { width: 30px; height: 32px; }
+	.svg-specialization_kosmetolog-dims { width: 28px; height: 22px; }
+	.svg-specialization_nevrolog-dims { width: 26px; height: 31px; }
+	.svg-specialization_nutriciolog-dims { width: 26px; height: 30px; }
+	.svg-specialization_otolaringolog-dims { width: 22px; height: 31px; }
+	.svg-specialization_pediatr-dims { width: 30px; height: 30px; }
+	.svg-time-dims { width: 18px; height: 18px; }
+	.svg-virus-dims { width: 20px; height: 20px; }
+	.svg-vk-dims { width: 16px; height: 16px; }
+	.svg-whatsapp-dims { width: 16px; height: 16px; }
+</style>
+
+<!--
+====================================================================================================
+-->
+
+	</head>
+	<body>
+		<header>
+			<h1>SVG stack preview</h1>
+			<p>This preview features an SVG stack. Please have a look at the HTML source for further details and be aware of the following constraints:</p>
+			<ul>
+				<li>Your browser has to <a href="http://caniuse.com/#feat=svg-fragment" target="_blank" rel="noopener noreferrer">support SVG fragment identifiers</a> for SVG stacks to work.</li>
+				<li>Support for SVG fragment identifiers hasn't always been that decent. For older browsers you will have to use some prolyfill like <a href="https://github.com/preciousforever/SVG-Stacker/blob/master/fixsvgstack.jquery.js" target="_blank" rel="noopener noreferrer">fixsvgstack.jquery.js</a>.</li>
+			</ul>
+		</header>
+		<section>
+
+<!--
+
+SVG stack
+====================================================================================================
+These SVG images make use of fragment identifiers (IDs) to reference certain portions of the
+external sprite. By default, all shapes inside the sprite are hidden by CSS. The `:target` pseudo
+selector is used to show the very shape that is referenced by the fragment identifier.
+
+-->
+
+			<ul>
+
+				<li title="action">
+					<div class="icon-box">
+
+						<!-- action -->
+						<img src="../icons/icons.svg#action" class="svg-action-dims" alt="action"/>
+
+					</div>
+					<h2>action</h2>
+				</li>
+				<li title="arrow-link">
+					<div class="icon-box">
+
+						<!-- arrow-link -->
+						<img src="../icons/icons.svg#arrow-link" class="svg-arrow-link-dims" alt="arrow-link"/>
+
+					</div>
+					<h2>arrow-link</h2>
+				</li>
+				<li title="calendar">
+					<div class="icon-box">
+
+						<!-- calendar -->
+						<img src="../icons/icons.svg#calendar" class="svg-calendar-dims" alt="calendar"/>
+
+					</div>
+					<h2>calendar</h2>
+				</li>
+				<li title="ellipse">
+					<div class="icon-box">
+
+						<!-- ellipse -->
+						<img src="../icons/icons.svg#ellipse" class="svg-ellipse-dims" alt="ellipse"/>
+
+					</div>
+					<h2>ellipse</h2>
+				</li>
+				<li title="ellipse-full">
+					<div class="icon-box">
+
+						<!-- ellipse-full -->
+						<img src="../icons/icons.svg#ellipse-full" class="svg-ellipse-full-dims" alt="ellipse-full"/>
+
+					</div>
+					<h2>ellipse-full</h2>
+				</li>
+				<li title="email">
+					<div class="icon-box">
+
+						<!-- email -->
+						<img src="../icons/icons.svg#email" class="svg-email-dims" alt="email"/>
+
+					</div>
+					<h2>email</h2>
+				</li>
+				<li title="eye">
+					<div class="icon-box">
+
+						<!-- eye -->
+						<img src="../icons/icons.svg#eye" class="svg-eye-dims" alt="eye"/>
+
+					</div>
+					<h2>eye</h2>
+				</li>
+				<li title="instagram">
+					<div class="icon-box">
+
+						<!-- instagram -->
+						<img src="../icons/icons.svg#instagram" class="svg-instagram-dims" alt="instagram"/>
+
+					</div>
+					<h2>instagram</h2>
+				</li>
+				<li title="map-icon">
+					<div class="icon-box">
+
+						<!-- map-icon -->
+						<img src="../icons/icons.svg#map-icon" class="svg-map-icon-dims" alt="map-icon"/>
+
+					</div>
+					<h2>map-icon</h2>
+				</li>
+				<li title="map-location">
+					<div class="icon-box">
+
+						<!-- map-location -->
+						<img src="../icons/icons.svg#map-location" class="svg-map-location-dims" alt="map-location"/>
+
+					</div>
+					<h2>map-location</h2>
+				</li>
+				<li title="map-orange">
+					<div class="icon-box">
+
+						<!-- map-orange -->
+						<img src="../icons/icons.svg#map-orange" class="svg-map-orange-dims" alt="map-orange"/>
+
+					</div>
+					<h2>map-orange</h2>
+				</li>
+				<li title="phone">
+					<div class="icon-box">
+
+						<!-- phone -->
+						<img src="../icons/icons.svg#phone" class="svg-phone-dims" alt="phone"/>
+
+					</div>
+					<h2>phone</h2>
+				</li>
+				<li title="search">
+					<div class="icon-box">
+
+						<!-- search -->
+						<img src="../icons/icons.svg#search" class="svg-search-dims" alt="search"/>
+
+					</div>
+					<h2>search</h2>
+				</li>
+				<li title="specialization_akusher-ginekolog">
+					<div class="icon-box">
+
+						<!-- specialization_akusher-ginekolog -->
+						<img src="../icons/icons.svg#specialization_akusher-ginekolog" class="svg-specialization_akusher-ginekolog-dims" alt="specialization_akusher-ginekolog"/>
+
+					</div>
+					<h2>specialization_akusher-ginekolog</h2>
+				</li>
+				<li title="specialization_allergolog-immunolog">
+					<div class="icon-box">
+
+						<!-- specialization_allergolog-immunolog -->
+						<img src="../icons/icons.svg#specialization_allergolog-immunolog" class="svg-specialization_allergolog-immunolog-dims" alt="specialization_allergolog-immunolog"/>
+
+					</div>
+					<h2>specialization_allergolog-immunolog</h2>
+				</li>
+				<li title="specialization_dermatovenerolog">
+					<div class="icon-box">
+
+						<!-- specialization_dermatovenerolog -->
+						<img src="../icons/icons.svg#specialization_dermatovenerolog" class="svg-specialization_dermatovenerolog-dims" alt="specialization_dermatovenerolog"/>
+
+					</div>
+					<h2>specialization_dermatovenerolog</h2>
+				</li>
+				<li title="specialization_detskiy-endokrinolog">
+					<div class="icon-box">
+
+						<!-- specialization_detskiy-endokrinolog -->
+						<img src="../icons/icons.svg#specialization_detskiy-endokrinolog" class="svg-specialization_detskiy-endokrinolog-dims" alt="specialization_detskiy-endokrinolog"/>
+
+					</div>
+					<h2>specialization_detskiy-endokrinolog</h2>
+				</li>
+				<li title="specialization_detskiy-nefrolog">
+					<div class="icon-box">
+
+						<!-- specialization_detskiy-nefrolog -->
+						<img src="../icons/icons.svg#specialization_detskiy-nefrolog" class="svg-specialization_detskiy-nefrolog-dims" alt="specialization_detskiy-nefrolog"/>
+
+					</div>
+					<h2>specialization_detskiy-nefrolog</h2>
+				</li>
+				<li title="specialization_detskiy-nevrolog">
+					<div class="icon-box">
+
+						<!-- specialization_detskiy-nevrolog -->
+						<img src="../icons/icons.svg#specialization_detskiy-nevrolog" class="svg-specialization_detskiy-nevrolog-dims" alt="specialization_detskiy-nevrolog"/>
+
+					</div>
+					<h2>specialization_detskiy-nevrolog</h2>
+				</li>
+				<li title="specialization_endokrinolog">
+					<div class="icon-box">
+
+						<!-- specialization_endokrinolog -->
+						<img src="../icons/icons.svg#specialization_endokrinolog" class="svg-specialization_endokrinolog-dims" alt="specialization_endokrinolog"/>
+
+					</div>
+					<h2>specialization_endokrinolog</h2>
+				</li>
+				<li title="specialization_kosmetolog">
+					<div class="icon-box">
+
+						<!-- specialization_kosmetolog -->
+						<img src="../icons/icons.svg#specialization_kosmetolog" class="svg-specialization_kosmetolog-dims" alt="specialization_kosmetolog"/>
+
+					</div>
+					<h2>specialization_kosmetolog</h2>
+				</li>
+				<li title="specialization_nevrolog">
+					<div class="icon-box">
+
+						<!-- specialization_nevrolog -->
+						<img src="../icons/icons.svg#specialization_nevrolog" class="svg-specialization_nevrolog-dims" alt="specialization_nevrolog"/>
+
+					</div>
+					<h2>specialization_nevrolog</h2>
+				</li>
+				<li title="specialization_nutriciolog">
+					<div class="icon-box">
+
+						<!-- specialization_nutriciolog -->
+						<img src="../icons/icons.svg#specialization_nutriciolog" class="svg-specialization_nutriciolog-dims" alt="specialization_nutriciolog"/>
+
+					</div>
+					<h2>specialization_nutriciolog</h2>
+				</li>
+				<li title="specialization_otolaringolog">
+					<div class="icon-box">
+
+						<!-- specialization_otolaringolog -->
+						<img src="../icons/icons.svg#specialization_otolaringolog" class="svg-specialization_otolaringolog-dims" alt="specialization_otolaringolog"/>
+
+					</div>
+					<h2>specialization_otolaringolog</h2>
+				</li>
+				<li title="specialization_pediatr">
+					<div class="icon-box">
+
+						<!-- specialization_pediatr -->
+						<img src="../icons/icons.svg#specialization_pediatr" class="svg-specialization_pediatr-dims" alt="specialization_pediatr"/>
+
+					</div>
+					<h2>specialization_pediatr</h2>
+				</li>
+				<li title="time">
+					<div class="icon-box">
+
+						<!-- time -->
+						<img src="../icons/icons.svg#time" class="svg-time-dims" alt="time"/>
+
+					</div>
+					<h2>time</h2>
+				</li>
+				<li title="virus">
+					<div class="icon-box">
+
+						<!-- virus -->
+						<img src="../icons/icons.svg#virus" class="svg-virus-dims" alt="virus"/>
+
+					</div>
+					<h2>virus</h2>
+				</li>
+				<li title="vk">
+					<div class="icon-box">
+
+						<!-- vk -->
+						<img src="../icons/icons.svg#vk" class="svg-vk-dims" alt="vk"/>
+
+					</div>
+					<h2>vk</h2>
+				</li>
+				<li title="whatsapp">
+					<div class="icon-box">
+
+						<!-- whatsapp -->
+						<img src="../icons/icons.svg#whatsapp" class="svg-whatsapp-dims" alt="whatsapp"/>
+
+					</div>
+					<h2>whatsapp</h2>
+				</li>
+			</ul>
+
+<!--
+====================================================================================================
+-->
+
+		</section>
+		<footer>
+			<p>Generated at Fri, 24 Dec 2021 06:47:33 GMT by <a href="https://github.com/svg-sprite/svg-sprite" target="_blank" rel="noopener noreferrer">svg-sprite</a>.</p>
+		</footer>
+	</body>
+</html>

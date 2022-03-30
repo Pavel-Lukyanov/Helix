@@ -1,0 +1,134 @@
+
+.page__container {
+    margin: 0 auto;
+    max-width: 1290px;
+  }
+  
+  .cards {
+    margin-bottom: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+  }
+  
+  .cards__photo {
+    width: 100%;
+    object-fit: cover;
+    height: 272px;
+    border-radius: 6px;
+  }
+  
+.card__video {
+    width: 100%;
+}
+  
+  /* Фото и видео */
+  
+  .media .tabs {
+    border-radius: 9px;
+    border-top: none;
+  }
+  
+  .media .tabs__controls {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    border-bottom: 1px solid #8fd398;
+  }
+  
+  .media .tabs__controls label {
+    white-space: nowrap;
+    border-top: none;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    text-transform: uppercase;
+    display: block;
+    text-align: center;
+    padding: 25px 80px;
+  }
+  
+  .media .tabs__controls label:first-child {
+    border-top-left-radius: 9px;
+    border-top-right-radius: 9px;
+  }
+  
+  .media .tabs__controls label:last-child {
+    border-top-right-radius: 9px;
+    border-top-left-radius: 9px;
+    text-align: left;
+  }
+  
+  .media .tabs__controls label:hover {
+    cursor: pointer;
+  }
+  
+  .media .tabs__controls .label--active {
+    position: relative;
+    border: 1px solid #8fd398;
+    border-bottom: none;
+    color: #45b553;
+  }
+  
+  .media .tabs__controls .label--active::after {
+    position: absolute;
+    content: "";
+    bottom: -2%;
+    left: 0;
+    background: #ffffff;
+    height: 10px;
+    width: 100%;
+  }
+  
+  .media .tabs__content {
+    border-top: none;
+  }
+  
+  .media .tabs__tab {
+    background: inherit;
+    padding: 45px 0px;
+    border-bottom-left-radius: 9px;
+    border-bottom-right-radius: 9px;
+    display: none;
+  }
+  
+  .media .tabs__tab.tabs__tab_active {
+    display: block;
+  }
+
+@media(max-width: 960px) {
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .cards__photo {
+        height: calc(180px + (40 + 40 * 0.7) * ((100vw - 580px) / 767));
+    }
+
+    .media .tabs__controls label {
+        padding: 15px 47px;
+    }
+}
+
+@media(max-width: 560px) {
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .cards__photo {
+        height: 300px;
+    }
+}
+
+@media(max-width: 425px) {
+    .tabs__controls {
+        justify-content: center;
+    }
+}
+
+
